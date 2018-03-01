@@ -15,16 +15,16 @@ prep :
 		log/elasticsearch
 
 pull :
-	docker-compose pull
+	sudo /usr/local/bin/docker-compose pull
 
 up : prep pull
-	docker-compose up -d
+	sudo /usr/local/bin/docker-compose up -d
 
 down :
-	docker-compose down
+	sudo /usr/local/bin/docker-compose down
 
 shell :
-	docker exec -ti $(CONTAINER) /bin/bash
+	sudo docker exec -ti $(CONTAINER) /bin/bash
 
 tail :
-	docker logs -f $(CONTAINER)
+	sudo docker logs -f $(CONTAINER)

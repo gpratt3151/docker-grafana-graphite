@@ -48,6 +48,9 @@ RUN     mkdir /src/grafana                                                      
         tar -xzf /src/grafana.tar.gz -C /opt/grafana --strip-components=1                                            &&\
         rm /src/grafana.tar.gz
 
+# Install Plugins
+ARG	GF_INSTALL_PLUGINS
+
 
 # Cleanup Compile Dependencies
 RUN     apk del --no-cache git curl wget gcc python-dev musl-dev libffi-dev

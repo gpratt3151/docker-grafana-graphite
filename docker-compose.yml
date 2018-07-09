@@ -1,7 +1,10 @@
 version: '2'
 services:
   grafana_graphite:
-    build: .
+    build:
+      context: .
+      args:
+        GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-simple-json-datasource
     image: kamon/grafana_graphite
     container_name: kamon-grafana-dashboard
     ports:
